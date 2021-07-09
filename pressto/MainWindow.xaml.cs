@@ -1,4 +1,5 @@
-﻿namespace press_double
+﻿
+namespace press_double
 {
     using System;
     using System.Runtime.InteropServices;
@@ -9,7 +10,7 @@
     using System.Windows.Interop;
     using System.Windows.Media;
     using System.Windows.Threading;
-
+    using ModernWpf;
     using press_double.Models;
 
     internal static class NativeMethods
@@ -127,7 +128,7 @@
                 {
                     MouseSimulator.ClickLeftMouseButton();
 
-                    Thread.Sleep((int)(1000 - this.Speedval.SpeedValue * this.Speedval.Multiplier));
+                    Thread.Sleep((int)(1000 - this.Speedval.SpeedValue));
                     Thread.Sleep(1);
                 }
             }
@@ -137,7 +138,7 @@
                 {
                     MouseSimulator.ClickRightMouseButton();
 
-                    Thread.Sleep((int)(1000 - this.Speedval.SpeedValue * this.Speedval.Multiplier));
+                    Thread.Sleep((int)(1000 - this.Speedval.SpeedValue));
                     Thread.Sleep(1);
                 }
             }
@@ -200,7 +201,8 @@
                         {
                             this.TimerTime = Convert.ToInt32(this.textBox.Text);
                             this.dispatchersecs = 0;
-                            DispatcherTimer dispatcherTimer = new DispatcherTimer();
+                            DispatcherTimer dispatcherTimer =
+                                new System.Windows.Threading.DispatcherTimer();
                             dispatcherTimer.Tick += new EventHandler(this.dispatcherTimer_Tick);
                             dispatcherTimer.Interval = new TimeSpan(0, 0, this.TimerTime);
                             dispatcherTimer.Start();

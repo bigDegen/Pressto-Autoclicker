@@ -14,7 +14,7 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
 
-        <Slider x:Name="slider" IsSnapToTickEnabled="True" HorizontalContentAlignment="Stretch"  HorizontalAlignment="Stretch" Margin="5,6,5,0" VerticalAlignment="Top" ValueChanged="slider_ValueChanged" SmallChange="0" />
+        <Slider x:Name="slider" IsSnapToTickEnabled="True" HorizontalContentAlignment="Stretch"  HorizontalAlignment="Stretch" Margin="5,6,5,0" VerticalAlignment="Top" ValueChanged="slider_ValueChanged" SmallChange="0" Maximum="1000" />
 
         <Label x:Name="lbslow" Content="Slow" HorizontalAlignment="Left" Margin="0,40,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbmedium" Content="Medium" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top"/>
